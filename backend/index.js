@@ -20,15 +20,16 @@ app.post("/todo" , async (req,res) => {
         completed: false
 
     })
+    res.json({
+        msg: "Todo created"
+    })
 
 })
 app.get("/todos" ,async (req,res) => {
     const todos = await todo.find({})
     res.json({
-        msg: "Todo created"
+        todos
     })
-
-    
 })
 app.put("completed" ,async (req,res) => {
     const updatePayload = req.body;
@@ -51,3 +52,4 @@ app.put("completed" ,async (req,res) => {
 app.delete("delete" , (req,res) =>{
 
 }) 
+app.listen(3000);
