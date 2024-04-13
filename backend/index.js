@@ -13,7 +13,7 @@ app.post("/todo" , async (req,res) => {
         msg: "You sent thw wrong inpute"
        })
     } 
-    // put mongodp
+
    await todo.create({
         title: createPayload.title,
         description:createPayload.description,
@@ -48,7 +48,4 @@ app.put("completed" ,async (req,res) => {
         })
     
 })
-app.delete("delete" , (req,res) =>{
-
-}) 
 app.listen(3000);
